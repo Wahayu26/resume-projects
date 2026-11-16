@@ -416,14 +416,26 @@ export const profileData = {
       featured: true,
     },
     {
-      id: "repo-nobels-backend",
-      name: "Nobels_Backend",
-      fullName: "Project-Nobel/Nobels_Backend",
-      url: "https://github.com/Project-Nobel/Nobels_Backend",
+      id: "repo-clipan-portal-dashboard",
+      name: "clipan-portal-dashboard",
+      fullName: "Wahayu26/clipan-portal-dashboard",
+      url: "https://github.com/Wahayu26/clipan-portal-dashboard",
       description:
-        "Backend API service architecture for authentication, business logic, and structured database management.",
-      techStack: ["Backend API", "SQL", "REST API", "Git"],
+        "Enterprise portal dashboard frontend built for operational visibility, role-based access workflows, and centralized reporting.",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "REST API"],
+      category: "Enterprise Web & CMS",
+      featured: true,
+    },
+    {
+      id: "repo-clipan-portal-backend",
+      name: "clipan-portal-dashboard-backend",
+      fullName: "Wahayu26/clipan-portal-dashboard-backend",
+      url: "https://github.com/Wahayu26/clipan-portal-dashboard-backend",
+      description:
+        "Backend API service powering the Clipan Portal Dashboard with structured endpoints, authentication, and database integration.",
+      techStack: ["Backend API", "REST API", "SQL", "Git"],
       category: "Backend & Systems",
+      featured: true,
     },
   ] satisfies GithubRepoItem[],
 
