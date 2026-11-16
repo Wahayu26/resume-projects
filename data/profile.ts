@@ -437,6 +437,17 @@ export const profileData = {
       category: "Backend & Systems",
       featured: true,
     },
+    {
+      id: "repo-workshop-dashboard",
+      name: "workshop-dashboard",
+      fullName: "Wahayu26/workshop-dashboard",
+      url: "https://github.com/Wahayu26/workshop-dashboard",
+      description:
+        "Interactive workshop management and operational tracking dashboard with clean UI components, service monitoring, and structured reporting.",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Dashboard UI"],
+      category: "Enterprise Web & CMS",
+      featured: true,
+    },
   ] satisfies GithubRepoItem[],
 
   education: {
