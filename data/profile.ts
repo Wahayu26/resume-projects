@@ -201,8 +201,8 @@ export const profileData = {
       domain: "Email Security",
       shortName: "Email Sec",
       iconName: "MailCheck",
-      proficiencyScore: 86,
-      skills: ["Microsoft Security Portal"],
+      proficiencyScore: 88,
+      skills: ["Microsoft Security Portal", "FortiMail Cloud"],
     },
     {
       id: "data-auto",
