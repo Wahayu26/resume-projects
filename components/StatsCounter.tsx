@@ -71,43 +71,46 @@ function AnimatedCounterCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.35, delay: index * 0.06 }}
-      className="soc-card soc-card-hover group relative flex h-full flex-col justify-between overflow-hidden p-6 sm:p-7"
+      className="soc-card soc-card-hover group relative flex h-full flex-col justify-between overflow-hidden"
     >
+      {/* Clean top accent strip (no overlapping corner shapes) */}
       <div
         aria-hidden="true"
-        className="absolute right-0 top-0 h-20 w-20 translate-x-6 -translate-y-6 rounded-full bg-[#F2A516]/10 transition-transform duration-300 group-hover:scale-125"
+        className="h-1 w-full bg-gradient-to-r from-[#F2A516] via-[#F2A516]/40 to-transparent opacity-75 transition-opacity duration-300 group-hover:opacity-100"
       />
 
-      <div>
-        <div className="flex items-center justify-between">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#F2A516]/30 bg-[#F2A516]/10 text-[#d97706] dark:text-[#F2A516]">
-            <IconComponent className="h-5 w-5" aria-hidden="true" />
+      <div className="flex flex-1 flex-col justify-between p-6 sm:p-7">
+        <div>
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#F2A516]/25 bg-[#F2A516]/10 text-[#d97706] dark:text-[#F2A516] transition-colors group-hover:bg-[#F2A516] group-hover:text-[#0B1220]">
+              <IconComponent className="h-5 w-5" aria-hidden="true" />
+            </div>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Verified
+            </span>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            Verified
-          </span>
+
+          <div className="mt-5 flex items-baseline gap-1 font-display text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+            <span aria-hidden="true">
+              {count}
+              <span className="text-[#F2A516]">{stat.suffix}</span>
+            </span>
+            <span className="sr-only">
+              {stat.value}
+              {stat.suffix}
+            </span>
+          </div>
+
+          <h3 className="mt-2.5 font-display text-lg font-bold leading-snug text-slate-900 dark:text-slate-100">
+            {stat.label}
+          </h3>
         </div>
 
-        <div className="mt-5 flex items-baseline gap-1 font-display text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-          <span aria-hidden="true">
-            {count}
-            <span className="text-[#F2A516]">{stat.suffix}</span>
-          </span>
-          <span className="sr-only">
-            {stat.value}
-            {stat.suffix}
-          </span>
-        </div>
-
-        <h3 className="mt-3 font-display text-lg font-bold text-slate-900 dark:text-slate-100">
-          {stat.label}
-        </h3>
+        <p className="mt-4 border-t border-slate-200/80 dark:border-slate-800/80 pt-3.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+          {stat.sublabel}
+        </p>
       </div>
-
-      <p className="mt-2 pt-3 border-t border-slate-200/70 dark:border-slate-800/70 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-        {stat.sublabel}
-      </p>
     </motion.div>
   );
 }
